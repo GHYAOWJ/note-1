@@ -1,0 +1,46 @@
+git server (ubuntu)
+sudo su
+apt-get install openssh-server
+apt-get install git
+add user git
+mkdir /home/git/project1
+chmod -R 777 /home/git/project1
+cd /home/git/project1
+git init --bare
+ssh-keygen -t rsa
+cd ~/.ssh
+cat id_rsa.pub >> authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo /etc/init.d/ssh restart
+
+---
+git client Windows
+install git,TortoiseGit
+
+---
+git bash
+git init
+git add .
+git commit -m 'initial commit'
+git remote rm origin
+git remote add origin git@ip:/path
+git push origin master
+
+若push出現認證錯誤訊息將C:\Users\使用者\.ssh中的known_hosts砍掉
+
+---
+TortoiseGit
+資料夾內右鍵->Git clone
+Load Putty Key不勾,URL git@ip:/path
+
+---
+指令
+git add . //新增修改的檔案
+git commit -m "修改內容"
+git push //新增到主機
+-
+git pull //從git拉取最新的檔案
+-
+git reset SHA1開頭 //回復該版本內容
+git push -f //回復版本內容後強制push
