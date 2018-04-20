@@ -1,1 +1,2 @@
 hping3 -S -p 80 IP
+hping3 --scan port range -V IP
