@@ -1,0 +1,34 @@
+https://github.com/RandomStorm/DVWA/
+
+apt-get -y install apache2 libapache2-mod-php
+cd /var/www/html
+wget https://github.com/RandomStorm/DVWA/archive/v1.9.zip && unzip v1.9.zip
+mv DVWA-1.9 /var/www/html/dvwa
+
+chmod -R 777 dvwa
+
+service mysql start
+mysql -u root -p 
+create database dvwa;
+CREATE USER 'user'@'127.0.0.1' IDENTIFIED BY 'p@ssword';
+grant all on dvwa.* to 'user'@'127.0.0.1';
+flush privileges;
+exit
+service mysql stop
+
+apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt-get install php5.6
+apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
+apt-get install php5.6-gd
+
+gedit /var/www/html/dvwa/config/config.inc.php
+setting db_user,db_password
+
+gedit /etc/php/5.6/apache2/php.ini
+allow_url_include,fopen=On,display_errors=On
+
+service apache2 restart && service mysql start
+http://127.0.0.1/dvwa/setup.php
+check status
