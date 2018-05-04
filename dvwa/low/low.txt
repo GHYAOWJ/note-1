@@ -1,0 +1,10 @@
+Brute Force
+---
+firefox設定proxy,例外處理localhost,127.0.0.1移除
+開啟burp suite,確認Proxy->Intercept->Intercept is on
+網頁選擇Brute Force,帳密以test送出
+在burp suite Proxy->Intercept->Raw 使用Ctri+I
+Intruder->Positions的Attack type選Cluster bomb,在usernameusername,password在test左右加上$
+Intruder->Payloads->Payload Options添加字典檔或自定義,若帳號密碼都要破解的話Payload set1及set2都須設定字典檔
+Intruder右上角Start attack
+---
