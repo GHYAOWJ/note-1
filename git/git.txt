@@ -48,3 +48,5 @@ git reset SHA1開頭 //回復該版本內容
 git push -f //回復版本內容後強制push
 -
 git remote show origin 顯示遠端所有分支
+--
+git branch 顯示所有分支
