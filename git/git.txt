@@ -50,3 +50,5 @@ git push -f //回復版本內容後強制push
 git remote show origin 顯示遠端所有分支
 --
 git branch 顯示所有分支
+git branch name 新建一個分支
+git checkout name 切換到該分支
