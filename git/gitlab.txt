@@ -1,0 +1,30 @@
+gitlab install
+ref https://about.gitlab.com/installation/#ubuntu
+
+install
+---
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates
+sudo apt-get install -y postfix
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+sudo EXTERNAL_URL="http://gitlab.example.com" apt-get install gitlab-ee
+---
+
+edit
+---
+nano /etc/gitlab/gitlab.rb
+external_url setting
+sudo gitlab-ctl reconfigure
+---
+
+gitlab cmd
+---
+# Start all GitLab components
+sudo gitlab-ctl start
+
+# Stop all GitLab components
+sudo gitlab-ctl stop
+
+# Restart all GitLab components
+sudo gitlab-ctl restart
+---
