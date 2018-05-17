@@ -20,3 +20,10 @@ CSRF
 ---
 將CSRF.html點兩下開啟後點選click送出修改密碼
 ---
+File Inclusion
+---
+在linux上/dvwa/vulnerabilities/fi/page=/etc/passwd
+或者使用多次../往上層目錄尋找
+建立一個phpinfo.txt放在另外一個伺服器上
+透過/dvwa/vulnerabilities/fi/page=http://localhost/phpinfo.txt進行讀取
+---
