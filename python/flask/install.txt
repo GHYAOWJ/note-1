@@ -1,0 +1,27 @@
+ubuntu
+
+mkdir flask
+cd flask
+mkdir hello
+cd hello
+
+python -m pip uninstall pip
+apt remove python-pip
+
+apt-get install python-pip
+pip install --upgrade pip
+pip install flask
+
+python hello.py
+打開瀏覽器 http://127.0.0.1
+
+虛擬環境
+mkdir env
+cd env
+
+pip install virtualenv
+virtualenv tmp(folder name)
+source tmp/bin/activate
+看到tmp在前則是成功，離開時輸入deactivate
+cd flask/hello
+python hello.py
