@@ -10,6 +10,6 @@
 |[hping3](hping3/)                       |hping3使用方法                 |
 |[openssl](openssl/)                     |使用openssl擷取憑證            |
 |[flask](python/flask/)                  |flask安裝方法、案例            |
-
+|[pip3](python/pip3/)                    |pip3安裝方法                  |
 
 
