@@ -9,6 +9,30 @@ def index():
 @app.route("/user/<name>")
 def user(name):
 	return render_template("user.html",name=name)
+@app.route("/test")
+def test():
+	mydict={"key": "this is a secret"}
+	mylist=[1,2,3,4]
+	myintvar=0
+	
+	class Myobj():
+		def method1(self):
+			return "I'm a instance method"
+		@staticmethod
+		def method2():
+			return "I'm a static method"
+		@classmethod
+		def method3(cls,value):
+			return "I'm a class method, get value {}".format(value)
+
+	context={
+	"mydict":mydict,
+	"mylist":mylist,
+	"myintvar":myintvar,
+	"instance":Myobj(),
+	"class":Myobj
+	}
+	return render_template("test.html",**context)
 
 if __name__=="__main__":
 	app.run(debug=True)
