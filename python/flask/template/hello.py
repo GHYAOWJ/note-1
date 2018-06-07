@@ -1,7 +1,7 @@
 # hello.py
 from flask import Flask,render_template
 
-app=Flask(__name__)
+app=Flask(__name__,template_folder="temp")
 
 @app.route("/")
 def index():
@@ -33,6 +33,25 @@ def test():
 	"class":Myobj
 	}
 	return render_template("test.html",**context)
+
+registered_users=["maomao","alicia"]
+@app.route("/ifelse/<name>")
+def ifelse(name):
+	if name not in registered_users:
+		name=None
+	return render_template("ifelse.html",name=name)
+@app.route("/forloop")
+def forloop():
+	return render_template("forloop.html",users=registered_users)
+@app.route("/macro")
+def macro():
+	return render_template("macro.html",users=registered_users)
+@app.route("/import")
+def himport():
+	return render_template("import.html",users=registered_users)
+@app.route("/extends")
+def hextends():
+	return render_template("extends.html") 
 
 if __name__=="__main__":
 	app.run(debug=True)

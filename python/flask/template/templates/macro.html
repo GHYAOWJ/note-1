@@ -1,0 +1,9 @@
+{% macro render_user(user) %}
+	<li>{{ user|title }}</li>
+{% endmacro %}
+<h1>User List</h1>
+<ul>
+	{% for user in users %}
+		{{ render_user(user) }}
+	{% endfor %}
+</ul>
