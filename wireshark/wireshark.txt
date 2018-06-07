@@ -1,0 +1,44 @@
+wireshark
+---
+運算子
+eq
+==
+
+ne
+!=
+
+gt
+>
+
+lt
+<
+---
+過濾條件
+eth
+	dst		目標MAC
+	src		來源MAC
+	addr	MAC位置
+	type	協定
+ip
+	dst		目標IP
+	src		來源IP
+	addr	IP位址
+	proto	協定
+tcp	
+	dstport	目標port
+	srcport	來源port
+	port	port
+udp	
+	dstport	目標port
+	srcport	來源port
+	port	port
+---
+邏輯運算子
+and
+&&
+
+or
+||
+
+not
+!
